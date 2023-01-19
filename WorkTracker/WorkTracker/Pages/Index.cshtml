@@ -1,10 +1,24 @@
 ﻿@page
-@model IndexModel
+@model DashboardModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <p>
+        <a asp-page="CreateNewWorkItem">Create New Work Item</a>
+    </p>
 </div>
+
+<div>
+    <h1>Queue</h1>
+    <div>
+@foreach (var item in Model.DashBoardItems) 
+{
+        <div>
+            @Html.DisplayFor(modelItem => item.Number)
+        </div>
+}
+    </div>
+</div>
+

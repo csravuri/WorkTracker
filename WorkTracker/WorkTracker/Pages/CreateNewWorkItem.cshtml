@@ -1,0 +1,79 @@
+﻿@page
+@model WorkTracker.Pages.CreateNewWorkItemModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New</h1>
+
+<h4>Work Item</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WorkItem.Number" class="control-label"></label>
+                <input asp-for="WorkItem.Number" class="form-control" />
+                <span asp-validation-for="WorkItem.Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.Description" class="control-label"></label>
+                <input asp-for="WorkItem.Description" class="form-control" />
+                <span asp-validation-for="WorkItem.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.WebURL" class="control-label"></label>
+                <input asp-for="WorkItem.WebURL" class="form-control" />
+                <span asp-validation-for="WorkItem.WebURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.SystemName" class="control-label"></label>
+                <input asp-for="WorkItem.SystemName" class="form-control" />
+                <span asp-validation-for="WorkItem.SystemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.LocalPath" class="control-label"></label>
+                <input asp-for="WorkItem.LocalPath" class="form-control" />
+                <span asp-validation-for="WorkItem.LocalPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.InvestigationStartDateUtc" class="control-label"></label>
+                <input asp-for="WorkItem.InvestigationStartDateUtc" class="form-control" />
+                <span asp-validation-for="WorkItem.InvestigationStartDateUtc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.LastWorkedDateUtc" class="control-label"></label>
+                <input asp-for="WorkItem.LastWorkedDateUtc" class="form-control" />
+                <span asp-validation-for="WorkItem.LastWorkedDateUtc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.EndDateUtc" class="control-label"></label>
+                <input asp-for="WorkItem.EndDateUtc" class="form-control" />
+                <span asp-validation-for="WorkItem.EndDateUtc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.Remarks" class="control-label"></label>
+                <input asp-for="WorkItem.Remarks" class="form-control" />
+                <span asp-validation-for="WorkItem.Remarks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkItem.Status" class="control-label"></label>
+                <input asp-for="WorkItem.Status" class="form-control" />
+                <span asp-validation-for="WorkItem.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to Dashboard</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
